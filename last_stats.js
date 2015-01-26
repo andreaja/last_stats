@@ -91,7 +91,12 @@ var main = function (argv) {
             var stats = transduce(xf, counter, {}, results);
 
             var twenty_most_played = most_played_one_per_artist(stats, 20);
-            console.log(twenty_most_played);
+            console.log("PLAYS\tTRACK")
+            twenty_most_played.forEach(function (play) {
+                var entry = play[0];
+                var plays = play[1];
+                console.log(plays + "\t" + entry.artist + " - " + entry.track);
+            });
         }, function (errors) {
             errors.map(function (error) {
                 console.log(error);
