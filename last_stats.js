@@ -103,6 +103,9 @@ var main = function (argv) {
             });
         });
 
+    })
+    .catch(function onReject(err) {
+        console.error(err);
     });
 };
 
